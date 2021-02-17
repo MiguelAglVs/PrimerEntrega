@@ -1,0 +1,5 @@
+El estudiante: Miguel
+Con cedula: 12345
+Se matriculo en el curso: Inteligencia artificial
+Con una Intencidad: 120 horas
+Tiene un Valor: $ 3.800.000
