@@ -20,19 +20,19 @@ const argv = require ('yargs')
 const fs = require ('fs');
 
 let  Matricula=[{
-idCurso: 1,
+idCurso: 'id del curso: ' + 1,
 	curso: 'Negocios digitales',
-	valor:'valor de: $ 2.942.000',
-	intencidad: 'intencidad: 80 horas'
+	intencidad: 'intencidad: 80 horas',
+	valor:'valor de: $ 2.942.000 \n',
 },
 {
-	idCurso: 2,
+	idCurso: 'id del curso: ' + 2 ,
 	curso: 'Inteligencia artificial',
 	intencidad: 'Intencidad: 120 horas',
-	valor:'Valor: $ 3.800.000'
+	valor:'Valor: $ 3.800.000 \n'
 },
 {
-	idCurso: 3,
+	idCurso: 'id del curso: ' + 3 ,
 	curso: 'Datbase developer',
 	intencidad: 'Intencidad: 120 horas',
 	valor: 'Valor: $ 2.100.000'
@@ -40,7 +40,7 @@ idCurso: 1,
 ];
 
 function listar() {
-	console.log('Cursos ofertados');
+	console.log('\nCursos ofertados \n');
 	var inc=0;
 	for(let i=0;i<Matricula.length;i++){
 		inc+=2000;
