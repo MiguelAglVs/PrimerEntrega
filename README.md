@@ -6,4 +6,4 @@ Ahora con el siguiente comando elija un curso: node Entrega1 inscribir -i="Id de
 
 los datos de la matriculase encuentran en el archivo de texto que se creo en la ruta del programa
 
-¡grecias!
+¡Gacias!
