@@ -1,54 +1,21 @@
-const us= {
-	idCurso: {
-		demand: true,
-		alias: 'i'
-	},
-		Nombre: {
-		demand: true,
-		alias: 'n'
-	},
-		Cedula: {
-		demand: true,
-		alias: 'c'
-	}
-}
+const {datosUs, matricula} = require('./app');
 
 const argv = require ('yargs')
-			.command('inscribir', 'matricula', us)
-			.argv
+.command('inscribir', 'matricula', datosUs)
+.argv
 
 const fs = require ('fs');
-
-let  Matricula=[{
-idCurso: 'id del curso: ' + 1,
-	curso: 'Negocios digitales',
-	intencidad: 'intencidad: 80 horas',
-	valor:'valor de: $ 2.942.000 \n',
-},
-{
-	idCurso: 'id del curso: ' + 2 ,
-	curso: 'Inteligencia artificial',
-	intencidad: 'Intencidad: 120 horas',
-	valor:'Valor: $ 3.800.000 \n'
-},
-{
-	idCurso: 'id del curso: ' + 3 ,
-	curso: 'Datbase developer',
-	intencidad: 'Intencidad: 120 horas',
-	valor: 'Valor: $ 2.100.000'
-}
-];
 
 function listar() {
 	console.log('\nCursos ofertados \n');
 	var inc=0;
-	for(let i=0;i<Matricula.length;i++){
+	for(let i=0;i<matricula.length;i++){
 		inc+=2000;
 		setTimeout(() => {
-			console.log(Matricula[i].idCurso);
-			console.log(Matricula[i].curso);
-			console.log(Matricula[i].intencidad);
-			console.log(Matricula[i].valor);
+			console.log(matricula[i].idCurso);
+			console.log(matricula[i].curso);
+			console.log(matricula[i].intencidad);
+			console.log(matricula[i].valor);
 		}, inc);
 	}
 
@@ -56,11 +23,11 @@ function listar() {
 
 function matricular() {
 	texto = 'El estudiante: ' + argv.Nombre + '\nCon cedula: ' + argv.Cedula +
-	'\nSe matriculo en el curso: ' + Matricula[argv.idCurso-1].curso + '\nCon una ' + Matricula[argv.idCurso-1].intencidad +
-	'\nTiene un ' + Matricula[argv.idCurso-1].valor;
+	'\nSe matriculo en el curso: ' + matricula[argv.idCurso-1].curso + '\nCon una ' + matricula[argv.idCurso-1].intencidad +
+	'\nTiene un ' + matricula[argv.idCurso-1].valor;
 	fs.writeFile('datos.txt', texto, (err)=>{
 		if(err) throw (err);
-		console.log('Se ha matriculado con exito')
+		console.log('\nSe ha matriculado con exito' + '\nlos datos se han guardado en el archivo datos.txt\n')
 	})
 }
 
